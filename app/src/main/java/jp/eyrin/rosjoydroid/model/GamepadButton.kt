@@ -1,4 +1,4 @@
-package jp.eyrin.rosjoydroid
+package jp.eyrin.rosjoydroid.model
 
 import android.view.KeyEvent
 

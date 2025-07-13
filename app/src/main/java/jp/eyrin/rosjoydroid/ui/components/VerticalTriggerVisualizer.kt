@@ -1,5 +1,5 @@
 // VerticalTriggerVisualizer.kt
-package jp.eyrin.rosjoydroid
+package jp.eyrin.rosjoydroid.ui.components
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.Canvas
@@ -13,7 +13,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.compose.runtime.collectAsState
 
 @SuppressLint("DefaultLocale")
 @Composable
