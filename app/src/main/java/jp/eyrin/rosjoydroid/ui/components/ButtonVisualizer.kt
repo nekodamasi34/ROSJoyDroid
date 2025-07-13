@@ -1,4 +1,4 @@
-package jp.eyrin.rosjoydroid
+package jp.eyrin.rosjoydroid.ui.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
@@ -14,34 +14,29 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.material.icons.rounded.PlayArrow
+import jp.eyrin.rosjoydroid.model.GamepadButton
 
 @Composable
 fun GamepadButtonsDisplay(
-    buttons: State<IntArray>,
-    showButtons: Boolean,
-    modifier: Modifier = Modifier
+    buttons: State<IntArray>, showButtons: Boolean, modifier: Modifier = Modifier
 ) {
     AnimatedVisibility(
-        visible = showButtons,
-        enter = fadeIn(),
-        exit = fadeOut()
+        visible = showButtons, enter = fadeIn(), exit = fadeOut()
     ) {
         Card(
             modifier = modifier
         ) {
             Column(
-                modifier = Modifier.padding(8.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp)
+                modifier = Modifier.padding(8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 Text(
-                    text = "Button Inputs",
-                    style = MaterialTheme.typography.titleMedium
+                    text = "Button Inputs", style = MaterialTheme.typography.titleMedium
                 )
 
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .aspectRatio(16f/9f)
+                        .aspectRatio(16f / 9f)
                         .padding(8.dp)
                 ) {
                     // L1/R1ボタン（上部）
@@ -59,20 +54,16 @@ fun GamepadButtonsDisplay(
                                 .width(64.dp)
                                 .height(32.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.L1.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.L1.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = RoundedCornerShape(8.dp)
                         ) {
                             Text(
                                 "L1",
-                                color = if (buttons.value[GamepadButton.L1.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.L1.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
 
@@ -83,20 +74,16 @@ fun GamepadButtonsDisplay(
                                 .width(64.dp)
                                 .height(32.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.R1.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.R1.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = RoundedCornerShape(8.dp)
                         ) {
                             Text(
                                 "R1",
-                                color = if (buttons.value[GamepadButton.R1.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.R1.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
                     }
@@ -114,20 +101,16 @@ fun GamepadButtonsDisplay(
                                 .size(40.dp)
                                 .align(Alignment.TopCenter),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.Y.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.Y.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = CircleShape
                         ) {
                             Text(
                                 "Y",
-                                color = if (buttons.value[GamepadButton.Y.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.Y.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
 
@@ -138,20 +121,16 @@ fun GamepadButtonsDisplay(
                                 .size(40.dp)
                                 .align(Alignment.CenterStart),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.X.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.X.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = CircleShape
                         ) {
                             Text(
                                 "X",
-                                color = if (buttons.value[GamepadButton.X.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.X.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
 
@@ -162,20 +141,16 @@ fun GamepadButtonsDisplay(
                                 .size(40.dp)
                                 .align(Alignment.CenterEnd),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.B.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.B.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = CircleShape
                         ) {
                             Text(
                                 "B",
-                                color = if (buttons.value[GamepadButton.B.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.B.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
 
@@ -186,20 +161,16 @@ fun GamepadButtonsDisplay(
                                 .size(40.dp)
                                 .align(Alignment.BottomCenter),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.A.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.A.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = CircleShape
                         ) {
                             Text(
                                 "A",
-                                color = if (buttons.value[GamepadButton.A.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.A.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
                     }
@@ -217,20 +188,16 @@ fun GamepadButtonsDisplay(
                                 .size(40.dp)
                                 .align(Alignment.TopCenter),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.DPAD_UP.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.DPAD_UP.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = CircleShape
                         ) {
                             Text(
                                 "↑",
-                                color = if (buttons.value[GamepadButton.DPAD_UP.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.DPAD_UP.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
 
@@ -241,20 +208,16 @@ fun GamepadButtonsDisplay(
                                 .size(40.dp)
                                 .align(Alignment.CenterStart),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.DPAD_LEFT.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.DPAD_LEFT.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = CircleShape
                         ) {
                             Text(
                                 "←",
-                                color = if (buttons.value[GamepadButton.DPAD_LEFT.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.DPAD_LEFT.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
 
@@ -265,20 +228,16 @@ fun GamepadButtonsDisplay(
                                 .size(40.dp)
                                 .align(Alignment.CenterEnd),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.DPAD_RIGHT.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.DPAD_RIGHT.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = CircleShape
                         ) {
                             Text(
                                 "→",
-                                color = if (buttons.value[GamepadButton.DPAD_RIGHT.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.DPAD_RIGHT.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
 
@@ -289,20 +248,16 @@ fun GamepadButtonsDisplay(
                                 .size(40.dp)
                                 .align(Alignment.BottomCenter),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.DPAD_DOWN.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.DPAD_DOWN.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = CircleShape
                         ) {
                             Text(
                                 "↓",
-                                color = if (buttons.value[GamepadButton.DPAD_DOWN.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                color = if (buttons.value[GamepadButton.DPAD_DOWN.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
                     }
@@ -318,10 +273,8 @@ fun GamepadButtonsDisplay(
                             onClick = { },
                             modifier = Modifier.size(32.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.BACK.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.BACK.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = RoundedCornerShape(4.dp)
@@ -330,10 +283,8 @@ fun GamepadButtonsDisplay(
                                 imageVector = Icons.Rounded.Menu,
                                 contentDescription = "Select",
                                 modifier = Modifier.size(16.dp),
-                                tint = if (buttons.value[GamepadButton.BACK.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                tint = if (buttons.value[GamepadButton.BACK.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
 
@@ -341,10 +292,8 @@ fun GamepadButtonsDisplay(
                             onClick = { },
                             modifier = Modifier.size(32.dp),
                             colors = ButtonDefaults.filledTonalButtonColors(
-                                containerColor = if (buttons.value[GamepadButton.START.ordinal] == 1)
-                                    MaterialTheme.colorScheme.primary
-                                else
-                                    MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
+                                containerColor = if (buttons.value[GamepadButton.START.ordinal] == 1) MaterialTheme.colorScheme.primary
+                                else MaterialTheme.colorScheme.secondary.copy(alpha = 0.1f)
                             ),
                             contentPadding = PaddingValues(0.dp),
                             shape = RoundedCornerShape(4.dp)
@@ -353,10 +302,8 @@ fun GamepadButtonsDisplay(
                                 imageVector = Icons.Rounded.PlayArrow,
                                 contentDescription = "Start",
                                 modifier = Modifier.size(16.dp),
-                                tint = if (buttons.value[GamepadButton.START.ordinal] == 1)
-                                    MaterialTheme.colorScheme.onPrimary
-                                else
-                                    MaterialTheme.colorScheme.secondary
+                                tint = if (buttons.value[GamepadButton.START.ordinal] == 1) MaterialTheme.colorScheme.onPrimary
+                                else MaterialTheme.colorScheme.secondary
                             )
                         }
                     }

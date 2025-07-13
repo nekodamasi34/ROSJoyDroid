@@ -41,7 +41,9 @@ def idl_to_fastdds(input_dir: Path, output_dir: Path):
 
 with tempfile.TemporaryDirectory() as tmp_dir:
     tmp_dir_ = Path(tmp_dir)
-    msg_to_idl(Path("rcl_interfaces/builtin_interfaces/msg/Time.msg"), tmp_dir_)
-    msg_to_idl(Path("common_interfaces/std_msgs/msg/Header.msg"), tmp_dir_)
-    msg_to_idl(Path("common_interfaces/sensor_msgs/msg/Joy.msg"), tmp_dir_)
+    # msg_to_idl(Path("rcl_interfaces/builtin_interfaces/msg/Time.msg"), tmp_dir_)
+    # msg_to_idl(Path("common_interfaces/std_msgs/msg/Header.msg"), tmp_dir_)
+    # msg_to_idl(Path("common_interfaces/sensor_msgs/msg/Joy.msg"), tmp_dir_)
+    msg_to_idl(Path("JoyFeedback.msg"), tmp_dir_)
+    msg_to_idl(Path("JoyFeedbackArray.msg"), tmp_dir_)
     idl_to_fastdds(tmp_dir_, Path(sys.argv[1]))

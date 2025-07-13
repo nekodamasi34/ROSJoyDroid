@@ -1,9 +1,10 @@
-package jp.eyrin.rosjoydroid
+package jp.eyrin.rosjoydroid.activity
 
 import android.view.InputDevice
 import android.view.KeyEvent
 import android.view.MotionEvent
 import androidx.activity.ComponentActivity
+import jp.eyrin.rosjoydroid.model.GamepadButton
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

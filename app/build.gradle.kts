@@ -87,6 +87,7 @@ dependencies {
 
     implementation(libs.fastdds.prefab)
     implementation(libs.play.services.maps)
+    implementation(libs.androidx.ui.test.android)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

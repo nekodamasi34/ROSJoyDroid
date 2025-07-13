@@ -8,8 +8,13 @@
 #include <fastdds/dds/publisher/DataWriter.hpp>
 #include <fastdds/dds/publisher/Publisher.hpp>
 #include <fastdds/dds/topic/TypeSupport.hpp>
+#include <fastdds/dds/subscriber/Subscriber.hpp>
+#include <fastdds/dds/subscriber/DataReader.hpp>
+#include <fastdds/dds/subscriber/DataReaderListener.hpp>
+#include <fastdds/dds/subscriber/SampleInfo.hpp>
 
 #include "sensor_msgs/msg/JoyPubSubTypes.h"
+//#include "sensor_msgs/msg/JoyFeedbackPubSubTypes.h"
 
 namespace fastdds {
     using namespace eprosima::fastdds::dds;
@@ -64,8 +69,12 @@ JoyPublisher *joy_publisher = nullptr;
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_jp_eyrin_rosjoydroid_MainActivity_createJoyPublisher(JNIEnv *env, jobject thiz, jint domain_id,
-                                                          jstring ns) {
+Java_jp_eyrin_rosjoydroid_activity_MainActivity_createJoyPublisher(
+    JNIEnv* env,
+    jobject thiz,
+    jint domain_id,
+    jstring ns)
+{
     const char *ns_ = env->GetStringUTFChars(ns, nullptr);
     joy_publisher = new JoyPublisher(domain_id, ns_);
     env->ReleaseStringUTFChars(ns, ns_);
@@ -73,15 +82,22 @@ Java_jp_eyrin_rosjoydroid_MainActivity_createJoyPublisher(JNIEnv *env, jobject t
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_jp_eyrin_rosjoydroid_MainActivity_destroyJoyPublisher(JNIEnv *env, jobject thiz) {
+Java_jp_eyrin_rosjoydroid_activity_MainActivity_destroyJoyPublisher(
+    JNIEnv* env,
+    jobject thiz)
+{
     delete joy_publisher;
     joy_publisher = nullptr;
 }
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_jp_eyrin_rosjoydroid_MainActivity_publishJoy(JNIEnv *env, jobject thiz, jfloatArray axes,
-                                                  jintArray buttons) {
+Java_jp_eyrin_rosjoydroid_activity_MainActivity_publishJoy(
+    JNIEnv* env,
+    jobject thiz,
+    jfloatArray axes,
+    jintArray buttons)
+{
     timespec now;
     clock_gettime(CLOCK_REALTIME, &now);
     joy_publisher->joy_msg.header().stamp().sec() = now.tv_sec;

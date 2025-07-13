@@ -1,11 +1,10 @@
 // StickVisualizer.kt
-package jp.eyrin.rosjoydroid
+package jp.eyrin.rosjoydroid.ui.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment

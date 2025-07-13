@@ -1,4 +1,4 @@
-package jp.eyrin.rosjoydroid
+package jp.eyrin.rosjoydroid.util
 
 import android.content.SharedPreferences
 import androidx.compose.runtime.MutableState
