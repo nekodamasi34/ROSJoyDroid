@@ -15,6 +15,20 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
+/**
+ * ui/theme/Theme.kt
+ *
+ * This file defines the main theme configuration for the app using Material 3 Compose APIs.
+ *
+ * Features:
+ *  - Provides the ROSJoyDroidTheme composable to apply consistent color schemes and typography
+ *  - Supports both light and dark themes, with dynamic color support on Android 12+ (Material You)
+ *  - Integrates color palette and typography from separate configuration files
+ *  - Automatically adapts status bar appearance and surface colors to match system settings
+ *
+ * Central entry point for wrapping the entire UI with a consistent look and feel.
+ */
+
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
     secondary = PurpleGrey80,

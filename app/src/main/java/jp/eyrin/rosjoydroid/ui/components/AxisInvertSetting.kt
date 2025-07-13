@@ -7,6 +7,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * ui/components/AxisInvertSetting.kt
+ *
+ * This file provides a composable UI component for configuring axis inversion settings (X and Y) for a gamepad.
+ *
+ * Features:
+ *  - Displays checkboxes to toggle inversion for X and Y axes
+ *  - Allows users to adjust input direction settings per axis
+ *  - Designed for integration into settings or configuration screens
+ */
+
 @Composable
 fun AxisInvertSetting(
     label: String,

@@ -16,6 +16,17 @@ import androidx.compose.material.icons.rounded.Menu
 import androidx.compose.material.icons.rounded.PlayArrow
 import jp.eyrin.rosjoydroid.model.GamepadButton
 
+/**
+ * ui/components/ButtonVisualizer.kt
+ *
+ * This file provides composable UI components to visualize and display gamepad button states.
+ *
+ * Features:
+ *  - Dynamically shows the status of each gamepad button (pressed/released)
+ *  - Visualizes button layout including ABXY, DPAD, L1/R1, Start/Select, etc.
+ *  - Useful for monitoring input status and debugging controller mappings
+ */
+
 @Composable
 fun GamepadButtonsDisplay(
     buttons: State<IntArray>, showButtons: Boolean, modifier: Modifier = Modifier

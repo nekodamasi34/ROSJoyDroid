@@ -9,8 +9,22 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 
+/**
+ * activity/GamepadActivity.kt
+ *
+ * This file defines the base activity class for handling gamepad input.
+ *
+ * Features:
+ *  - Captures and manages all gamepad input (buttons, sticks, triggers, etc.)
+ *  - Applies dead zone processing and axis inversion
+ *  - Provides current axis and button states via Kotlin Flow
+ *  - Supports directional pad (DPAD) input
+ *
+ * Intended to be subclassed for activities requiring gamepad functionality.
+ */
+
 open class GamepadActivity : ComponentActivity() {
-    // 内部でMutableStateFlow
+
     private val _axes = MutableStateFlow(floatArrayOf(0f, 0f, 0f, 0f, 0f, 0f))
     private val _buttons = MutableStateFlow(IntArray(GamepadButton.entries.size))
 
@@ -22,7 +36,6 @@ open class GamepadActivity : ComponentActivity() {
     var invertLeftTrigger = false
     var invertRightTrigger = false
 
-    // 外部にStateFlowとして公開
     val axes: StateFlow<FloatArray> get() = _axes
     val buttons: StateFlow<IntArray> get() = _buttons
 

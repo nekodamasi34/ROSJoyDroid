@@ -13,6 +13,18 @@ import jp.eyrin.rosjoydroid.model.ScreenMode
 import jp.eyrin.rosjoydroid.activity.MainActivity
 import kotlinx.coroutines.flow.MutableStateFlow
 
+/**
+ * ui/screens/MainScreen.kt
+ *
+ * This file defines the main composable screen that manages navigation between all primary panes (Status, Manual, Extra).
+ *
+ * Features:
+ *  - Hosts the top app bar, navigation tabs, and dynamically displays each pane based on current screen mode
+ *  - Handles communication and state sync with MainActivity, including extra axes/buttons and manual controls
+ *  - Integrates settings navigation via the top bar
+ *  - Central hub for switching between status display, manual control, and extra controls within the app UI
+ */
+
 @SuppressLint("StateFlowValueCalledInComposition")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -84,11 +96,9 @@ fun MainScreen(
     // LaunchedEffect for syncing ga.currentAxes/currentButtons + extraEnabled…
     /* Sync to MainActivity */
     LaunchedEffect(mode, ga.manualAxes.value, ga.manualButtons.value, extraEnabled) {
-        if (ga is MainActivity) {
-            ga.currentAxes = if (mode == ScreenMode.MANUAL) ga.manualAxes.value else ga.axes.value
-            ga.currentButtons =
-                if (mode == ScreenMode.MANUAL) ga.manualButtons.value else ga.buttons.value
-            ga.extraEnabled = extraEnabled
-        }
+        ga.currentAxes = if (mode == ScreenMode.MANUAL) ga.manualAxes.value else ga.axes.value
+        ga.currentButtons =
+            if (mode == ScreenMode.MANUAL) ga.manualButtons.value else ga.buttons.value
+        ga.extraEnabled = extraEnabled
     }
 }

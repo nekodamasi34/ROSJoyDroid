@@ -9,6 +9,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.text.style.TextAlign
 
+/**
+ * ui/components/AxisRow.kt
+ *
+ * This file defines a composable UI component for displaying and adjusting a single axis value using a slider.
+ *
+ * Features:
+ *  - Shows the axis index, label, and current value
+ *  - Provides an interactive slider to modify the axis value in real-time
+ *  - Intended for manual control, calibration, or diagnostics screens
+ */
+
 @SuppressLint("DefaultLocale")
 @Composable
 fun AxisRow(index: Int, name: String, value: Float, onChange: (Float) -> Unit) {

@@ -9,6 +9,18 @@ import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.flow.MutableStateFlow
 import jp.eyrin.rosjoydroid.ui.components.ExtraControls
 
+/**
+ * ui/screens/ExtraPane.kt
+ *
+ * This file provides a composable pane for configuring and monitoring extra gamepad axes and buttons.
+ *
+ * Features:
+ *  - Displays a toggle switch to enable or disable extra controls
+ *  - Integrates the ExtraControls component for direct manipulation of additional axes and buttons
+ *  - Intended for scenarios where extended controller functionality or custom input mapping is required
+ *  - Designed to fit seamlessly within a multi-pane Compose UI
+ */
+
 @Composable
 fun ExtraPane(
     axes: MutableStateFlow<FloatArray>,

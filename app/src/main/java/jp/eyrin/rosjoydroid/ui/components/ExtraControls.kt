@@ -8,6 +8,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.flow.MutableStateFlow
 
+/**
+ * ui/components/ExtraControls.kt
+ *
+ * This file defines composable UI components for configuring and monitoring extra gamepad axes and buttons.
+ *
+ * Features:
+ *  - Displays additional axes as sliders for manual adjustment
+ *  - Shows extra buttons as filter chips for toggling state
+ *  - Useful for testing, diagnostics, or supporting controllers with more than standard inputs
+ */
+
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun ExtraControls(

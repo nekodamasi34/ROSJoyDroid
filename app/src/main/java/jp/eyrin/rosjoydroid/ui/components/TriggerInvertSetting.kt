@@ -7,6 +7,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * ui/components/TriggerInvertSetting.kt
+ *
+ * This file provides a composable UI component to configure inversion settings for gamepad triggers (L2 and R2).
+ *
+ * Features:
+ *  - Displays checkboxes to toggle inversion for left and right triggers
+ *  - Integrates into broader gamepad settings screens for flexible input configuration
+ */
+
 @Composable
 fun TriggerInvertSetting(
     label: String,

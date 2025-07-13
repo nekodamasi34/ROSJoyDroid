@@ -15,6 +15,18 @@ import jp.eyrin.rosjoydroid.model.GamepadSettings
 import jp.eyrin.rosjoydroid.ui.components.TriggerInvertSetting
 import jp.eyrin.rosjoydroid.ui.components.AxisInvertSetting
 
+/**
+ * ui/screens/SettingsScreen.kt
+ *
+ * This file defines the settings screen for the app, providing user controls for ROS2 and input configuration.
+ *
+ * Features:
+ *  - Allows adjustment of ROS2 connection settings (namespace, domain ID, update period)
+ *  - Provides UI to configure dead zone, axis inversion, and trigger inversion
+ *  - Organized into clear sections for connection and input settings
+ *  - Integrates navigation with a top bar and back button for seamless UX
+ */
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SettingsScreen(

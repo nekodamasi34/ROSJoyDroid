@@ -8,6 +8,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import jp.eyrin.rosjoydroid.activity.GamepadActivity
 
+/**
+ * ui/components/GamepadStatus.kt
+ *
+ * This file provides a composable UI that summarizes the current state of all gamepad inputs.
+ *
+ * Features:
+ *  - Shows analog stick positions and trigger values with visual indicators
+ *  - Displays the real-time state of all buttons
+ *  - Designed to provide an overview for status monitoring or debugging
+ */
+
 @Composable
 fun GamepadStatus(
     gamepadActivity: GamepadActivity,

@@ -8,6 +8,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 
+/**
+ * ui/screens/SettingsSection.kt
+ *
+ * This file provides a reusable composable section for grouping related settings in the SettingsScreen.
+ *
+ * Features:
+ *  - Displays a section title (with optional icon) and content area for settings controls
+ *  - Uses a Card layout with consistent spacing and elevation
+ *  - Improves organization and readability of complex settings UIs
+ */
+
 @Composable
 fun SettingsSection(
     title: String,

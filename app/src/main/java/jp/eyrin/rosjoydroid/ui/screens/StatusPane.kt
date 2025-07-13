@@ -7,6 +7,17 @@ import androidx.compose.ui.unit.dp
 import jp.eyrin.rosjoydroid.activity.GamepadActivity
 import jp.eyrin.rosjoydroid.ui.components.GamepadStatus
 
+/**
+ * ui/screens/StatusPane.kt
+ *
+ * This file defines a composable pane for displaying the current status of all gamepad inputs.
+ *
+ * Features:
+ *  - Shows analog inputs and button states in separate columns for clarity
+ *  - Integrates the GamepadStatus component for detailed input visualization
+ *  - Designed as the main status overview within the app UI
+ */
+
 @Composable
 fun StatusPane(ga: GamepadActivity) {
     Row(

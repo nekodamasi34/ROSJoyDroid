@@ -2,6 +2,20 @@ package jp.eyrin.rosjoydroid.model
 
 import android.view.KeyEvent
 
+/**
+ * model/GamepadButton.kt
+ *
+ * This file defines the GamepadButton enum, representing all supported gamepad buttons for the app.
+ *
+ * Features:
+ *  - Enumerates all logical gamepad button names used throughout the project (e.g., ABXY, shoulder, stick, DPAD, etc.)
+ *  - Includes a companion object with a utility function to convert Android KeyEvent key codes into GamepadButton values,
+ *    making platform event handling and abstraction easier
+ *  - Ensures consistent and type-safe button references across the UI, logic, and platform layers
+ *
+ * This enum is essential for mapping physical gamepad events to internal application state and logic.
+ */
+
 enum class GamepadButton {
     A,
     B,

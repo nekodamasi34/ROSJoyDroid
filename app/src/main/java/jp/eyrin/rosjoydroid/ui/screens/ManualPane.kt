@@ -11,6 +11,18 @@ import androidx.compose.ui.unit.dp
 import jp.eyrin.rosjoydroid.model.GamepadButton
 import jp.eyrin.rosjoydroid.ui.components.AxisRow
 
+/**
+ * ui/screens/ManualPane.kt
+ *
+ * This file provides a composable pane for manually controlling and monitoring gamepad axes and button states.
+ *
+ * Features:
+ *  - Displays all axes as sliders for direct user adjustment
+ *  - Shows each button as a toggle chip for easy state changes
+ *  - Includes a "Reset All" button for resetting axes and buttons to default values
+ *  - Designed for use in calibration, diagnostics, or testing scenarios
+ */
+
 @OptIn(ExperimentalLayoutApi::class, ExperimentalMaterial3Api::class)
 @Composable
 fun ManualPane(

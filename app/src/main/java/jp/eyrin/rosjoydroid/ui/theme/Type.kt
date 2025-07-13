@@ -6,6 +6,19 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
+/**
+ * ui/theme/Type.kt
+ *
+ * This file defines the app's typography settings for use with the Material 3 Compose theme.
+ *
+ * Features:
+ *  - Configures the core Typography instance with default text styles and properties
+ *  - Centralizes font family, weight, size, and spacing configuration for all text components
+ *  - Designed for easy extension and customization of headings, labels, and body text styles
+ *
+ * Used as part of the MaterialTheme setup to ensure consistent text appearance throughout the app.
+ */
+
 // Set of Material typography styles to start with
 val Typography = Typography(
     bodyLarge = TextStyle(

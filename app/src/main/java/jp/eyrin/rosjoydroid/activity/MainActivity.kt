@@ -14,7 +14,6 @@ import androidx.navigation.compose.rememberNavController
 import jp.eyrin.rosjoydroid.model.GamepadButton
 import jp.eyrin.rosjoydroid.model.GamepadSettings
 import jp.eyrin.rosjoydroid.model.loadFromPrefs
-import jp.eyrin.rosjoydroid.model.rememberGamepadActivityState
 import jp.eyrin.rosjoydroid.model.saveToPrefs
 import jp.eyrin.rosjoydroid.ui.screens.MainScreen
 import jp.eyrin.rosjoydroid.ui.screens.SettingsScreen
@@ -25,27 +24,36 @@ import kotlinx.coroutines.launch
 import java.util.Timer
 import java.util.TimerTask
 
-/*
- * MainActivity – クリーンリファクタ版
- *  - 3 タブ (Status / Manual / Extra)
- *  - Extra は ON/OFF スイッチ付き
- *  - publishJoy は currentAxes / currentButtons (+ extra*) を送信
+/**
+ * activity/MainActivity.kt
+ *
+ * This file serves as the main entry point of the application.
+ *
+ * Features:
+ *  - Inherits from GamepadActivity to handle gamepad input
+ *  - Manages UI navigation using Jetpack Compose
+ *  - Loads and saves user settings and preferences
+ *  - Publishes Joy messages to ROS2 Humble via JNI (C++ bridge)
+ *  - Manages the state of extra buttons and axes
+ *  - Controls the publish loop based on the current configuration
+ *
+ * Central class for integrating UI and ROS2 communication.
  */
 
 class MainActivity : GamepadActivity() {
-    /* 追加入力 */
+
     val extraAxes = MutableStateFlow(FloatArray(4))
     val extraButtons = MutableStateFlow(IntArray(8))
 
     val manualAxes = mutableStateOf(FloatArray(6))
     val manualButtons = mutableStateOf(IntArray(GamepadButton.entries.size))
 
-    /* Publish バッファ */
+
     var currentAxes: FloatArray = FloatArray(6)
     var currentButtons: IntArray = IntArray(GamepadButton.entries.size)
     var extraEnabled: Boolean = true
 
-    /* 内部 */
+
     private lateinit var publishTimer: Timer
     private var axesJob: Job? = null
     private var btnJob: Job? = null
@@ -57,9 +65,7 @@ class MainActivity : GamepadActivity() {
         setContent {
             val nav = rememberNavController()
             val settings = remember { mutableStateOf(GamepadSettings.loadFromPrefs(prefs)) }
-            val gaState = rememberGamepadActivityState(this)
 
-            // 設定を適用 & 保存
             LaunchedEffect(settings.value) {
                 with(settings.value) {
                     super@MainActivity.deadZone = deadZone
@@ -77,7 +83,6 @@ class MainActivity : GamepadActivity() {
                 NavHost(nav, startDestination = "main") {
                     composable("main") {
                         MainScreen(
-//                            ga = gaState,
                             ga = this@MainActivity,
                             extraAxes = extraAxes,
                             extraButtons = extraButtons,

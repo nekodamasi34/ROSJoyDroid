@@ -1,4 +1,3 @@
-// StickVisualizer.kt
 package jp.eyrin.rosjoydroid.ui.components
 
 import androidx.compose.foundation.Canvas
@@ -15,6 +14,17 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 import kotlin.math.min
 
+/**
+ * ui/components/StickVisualizer.kt
+ *
+ * This file defines a composable component to visually represent the position of a gamepad analog stick on a 2D plane.
+ *
+ * Features:
+ *  - Draws a unit circle with crosshairs to represent possible stick positions
+ *  - Highlights current stick location and displays X/Y values numerically
+ *  - Useful for manual operation, calibration, and diagnostics of analog sticks
+ */
+
 @Composable
 fun StickVisualizer(
     label: String,
@@ -22,7 +32,6 @@ fun StickVisualizer(
     y: Float,
     modifier: Modifier = Modifier
 ) {
-    // 色を先に変数に保持
     val primaryColor = MaterialTheme.colorScheme.primary
 
     Column(
@@ -32,7 +41,6 @@ fun StickVisualizer(
         Text(text = label)
         Box(
             modifier = Modifier
-//                .size(120.dp)
                 .size(120.dp)
                 .border(1.dp, MaterialTheme.colorScheme.outline)
         ) {
@@ -64,7 +72,7 @@ fun StickVisualizer(
                 val stickX = center.x + (x * radius)
                 val stickY = center.y + (y * radius)
                 drawCircle(
-                    color = primaryColor,  // 先に取得したprimaryColorを使う
+                    color = primaryColor,
                     radius = 8f,
                     center = Offset(stickX, stickY)
                 )

@@ -1,4 +1,3 @@
-// VerticalTriggerVisualizer.kt
 package jp.eyrin.rosjoydroid.ui.components
 
 import android.annotation.SuppressLint
@@ -13,6 +12,17 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+
+/**
+ * ui/components/VerticalTriggerVisualizer.kt
+ *
+ * This file defines a composable component that visually displays the current value of a trigger input in a vertical bar format.
+ *
+ * Features:
+ *  - Draws a bar to indicate the trigger's position in real time
+ *  - Shows the numeric value alongside the visualization
+ *  - Useful for monitoring and debugging analog trigger inputs
+ */
 
 @SuppressLint("DefaultLocale")
 @Composable
