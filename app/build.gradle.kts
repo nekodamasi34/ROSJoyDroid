@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "jp.eyrin.rosjoydroid"
+    namespace = "jp.aw.rosjoydroid"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "jp.eyrin.rosjoydroid"
+        applicationId = "jp.aw.rosjoydroid"
         minSdk = 24
         targetSdk = 34
         versionCode = 2

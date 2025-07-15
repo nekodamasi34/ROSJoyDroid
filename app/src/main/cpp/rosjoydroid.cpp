@@ -69,7 +69,7 @@ JoyPublisher *joy_publisher = nullptr;
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_jp_eyrin_rosjoydroid_activity_MainActivity_createJoyPublisher(
+Java_jp_aw_rosjoydroid_activity_MainActivity_createJoyPublisher(
     JNIEnv* env,
     jobject thiz,
     jint domain_id,
@@ -82,7 +82,7 @@ Java_jp_eyrin_rosjoydroid_activity_MainActivity_createJoyPublisher(
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_jp_eyrin_rosjoydroid_activity_MainActivity_destroyJoyPublisher(
+Java_jp_aw_rosjoydroid_activity_MainActivity_destroyJoyPublisher(
     JNIEnv* env,
     jobject thiz)
 {
@@ -92,7 +92,7 @@ Java_jp_eyrin_rosjoydroid_activity_MainActivity_destroyJoyPublisher(
 
 extern "C"
 JNIEXPORT void JNICALL
-Java_jp_eyrin_rosjoydroid_activity_MainActivity_publishJoy(
+Java_jp_aw_rosjoydroid_activity_MainActivity_publishJoy(
     JNIEnv* env,
     jobject thiz,
     jfloatArray axes,
